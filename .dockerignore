@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+.prettierignore
+.dockerignore
+.next
+.helm
+Dockerfile
+node_modules
