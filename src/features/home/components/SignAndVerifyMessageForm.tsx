@@ -6,9 +6,12 @@ import { Button, Input, LoaderCircle, StatusMessage } from '@/components'
 import { QueryKey } from '@/lib/reactQuery'
 import { getErrorMessage } from '@/utils'
 import { sendMockedTest } from '../actions'
-import { TestFormSchema, testFormNameSchema } from '../validationSchemas'
+import {
+  SignAndVerifySchema,
+  signAndVerifyFormMessageSchema
+} from '../validationSchemas'
 
-export const TestForm = () => {
+export const SignAndVerifyMessageForm = () => {
   const { isLoading, mutate, error } = useMutation(
     [QueryKey.test],
     sendMockedTest,
@@ -21,29 +24,34 @@ export const TestForm = () => {
   const errorMessage = error ? getErrorMessage(error) : undefined
 
   return (
-    <Form<TestFormSchema> onSubmit={({ name }) => mutate({ userName: name })}>
+    <Form<SignAndVerifySchema>
+      onSubmit={({ message }) => mutate({ userName: message })}
+    >
       {({ submit, isSubmitted }) => (
         <form
           onSubmit={e => {
             e.preventDefault()
             submit()
           }}
-          className="flex w-full max-w-xs flex-col gap-4 max-md:max-w-none"
+          className="flex w-full max-w-xs flex-col gap-4 text-left max-md:max-w-none"
         >
-          <Field<TestFormSchema['name']>
-            name="name"
-            onBlurValidate={testFormNameSchema}
-            onChangeValidate={isSubmitted ? testFormNameSchema : undefined}
+          <Field<SignAndVerifySchema['message']>
+            name="message"
+            initialValue="GameSwift x Casper Network"
+            onBlurValidate={signAndVerifyFormMessageSchema}
+            onChangeValidate={
+              isSubmitted ? signAndVerifyFormMessageSchema : undefined
+            }
           >
             {({ value, setValue, onBlur, errors }) => (
               <Input
-                id="name"
+                id="message"
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 onBlur={onBlur}
-                placeholder="Name"
+                placeholder="Your message..."
                 disabled={isLoading}
-                label="Name"
+                label="Message"
                 errorMessage={errors}
               />
             )}
@@ -52,7 +60,7 @@ export const TestForm = () => {
             disabled={isLoading}
             type="submit"
           >
-            {isLoading && <LoaderCircle />}Submit
+            {isLoading && <LoaderCircle />}Sign
           </Button>
           {errorMessage && (
             <StatusMessage variant="error">{errorMessage}</StatusMessage>
