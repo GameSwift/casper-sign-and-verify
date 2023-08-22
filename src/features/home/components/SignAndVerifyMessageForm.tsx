@@ -10,6 +10,7 @@ import {
   SignAndVerifySchema,
   signAndVerifyFormMessageSchema
 } from '../validationSchemas'
+import { VerifyMessage } from './VerifyMessage'
 
 export const SignAndVerifyMessageForm = () => {
   const { isLoading, mutate, error, data, variables } = useMutation(
@@ -63,7 +64,7 @@ export const SignAndVerifyMessageForm = () => {
         )}
       </Form>
       {data && (
-        <div className="flex flex-col gap-4 text-left">
+        <div className="flex flex-col gap-4 self-stretch text-left">
           <div>
             <h3 className="font-main text-xl">Message:</h3>
             <p className="text-gray">{variables}</p>
@@ -74,8 +75,14 @@ export const SignAndVerifyMessageForm = () => {
           </div>
           <div>
             <h3 className="font-main text-xl">Signature:</h3>
-            <p className="break-all text-gray">{data.message}</p>
+            <p className="break-all text-gray">{data.signatureHex}</p>
           </div>
+          <VerifyMessage
+            message={variables || ''}
+            publicKey={data.publicKey}
+            signature={data.signature}
+            signatureHex={data.signatureHex}
+          />
         </div>
       )}
     </>

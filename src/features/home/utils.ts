@@ -20,7 +20,11 @@ export const signMessage = async (message: string) => {
       throw new Error('User rejected signature')
     }
 
-    return Promise.resolve({ message: signatureRes.signatureHex, publicKey })
+    return Promise.resolve({
+      signatureHex: signatureRes.signatureHex,
+      signature: signatureRes.signature,
+      publicKey
+    })
   } catch (error) {
     return Promise.reject(error)
   }
