@@ -23,7 +23,7 @@ const Error: React.FC<ErrorProps> = ({ error, reset }) => (
           <div>
             <Icon
               id="warning"
-              className="h-4 w-[5px]"
+              className="h-4 w-[5px] fill-current"
             />
           </div>
         </Button>
