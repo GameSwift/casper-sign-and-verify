@@ -63,7 +63,7 @@ export const FooterMainRow = () => (
             />
           ))}
         </div>
-        <div className="relative -my-10 w-auto flex-1 self-stretch max-lg:hidden">
+        <div className="relative -my-[60px] w-auto flex-1 self-stretch max-lg:hidden">
           <Image
             src={Ships}
             alt=""

@@ -13,20 +13,6 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=9999999999, must-revalidate'
-          }
-        ]
-      }
-    ]
-  },
-  async headers() {
-    return [
-      {
-        source: '/icons/:path*.svg',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
             value: 'no-cache'
           }
         ]

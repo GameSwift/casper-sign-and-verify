@@ -1,14 +1,6 @@
-# Next.js Application Template
+# Casper Wallet x GameSwift Sign & Verify demo
 
-This repository contains a Next.js project template. It's designed to provide a solid foundation for building your Next.js applications, with a focus on simplicity, best practices, and modern development tools.
-
-## Features
-
-- **Next.js**: The core framework that powers the application.
-- **TypeScript**: This project is configured to use TypeScript for static type checking.
-- **ESLint and Prettier**: The project is set up with ESLint for linting and Prettier for code formatting.
-- **Husky and lint-staged**: These tools are used to ensure that all committed code is linted and formatted.
-- **Commitizen and commitlint**: These tools are used to enforce conventional commit messages.
+This repository contains a demo application that demonstrates how to use the Casper Wallet Sign & Verify message.
 
 ## Getting Started
 
@@ -16,9 +8,9 @@ To get started with this template, follow the steps below:
 
 1. **Clone the repository**: Clone this repository to your local machine.
 2. **Install dependencies**: Install the necessary dependencies by running `yarn install`.
-3. **Run the development server**: Start the development server by running `yarn dev`.
-4. **Open the application**: Open your web browser and navigate to `http://localhost:3000` to see the application in action.
-5. **Start editing**: You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Copy environment variables**: Copy the `.env.example` file to `.env` and fill in the required environment variables.
+4. **Run the development server**: Start the development server by running `yarn dev`.
+5. **Open the application**: Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
 ## Scripts
 
