@@ -1,12 +1,9 @@
 import { z } from 'zod'
 
-export const testFormSchema = z.object({
-  name: z
-    .string()
-    .min(3, 'Name should be at least 3 characters long.')
-    .max(21, 'Name too long.')
+export const signAndVerifySchema = z.object({
+  message: z.string().nonempty('Message is required')
 })
 
-export const testFormNameSchema = testFormSchema.shape.name
+export const signAndVerifyFormMessageSchema = signAndVerifySchema.shape.message
 
-export type TestFormSchema = z.infer<typeof testFormSchema>
+export type SignAndVerifySchema = z.infer<typeof signAndVerifySchema>

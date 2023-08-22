@@ -1,11 +1,10 @@
-import { AppName } from '@/config'
-import { TestForm } from './components'
+import { SignAndVerifyMessageForm } from './components'
 
 export const HomePage = () => (
-  <section className="layout-section items-start gap-8">
+  <section className="layout-section items-center gap-8 text-center">
     <h1 className="font-extrabold font-main text-4xl max-sm:text-3xl">
-      <span className="text-primary">{AppName}</span> Next.js 13 Starter
+      <span className="text-primary">Casper wallet</span> sign & verify
     </h1>
-    <TestForm />
+    <SignAndVerifyMessageForm />
   </section>
 )

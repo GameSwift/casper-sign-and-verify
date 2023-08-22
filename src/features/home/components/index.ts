@@ -1,1 +1,1 @@
-export { TestForm } from './TestForm'
+export { SignAndVerifyMessageForm } from './SignAndVerifyMessageForm'
