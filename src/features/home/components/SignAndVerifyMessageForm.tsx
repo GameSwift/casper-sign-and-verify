@@ -31,7 +31,7 @@ export const SignAndVerifyMessageForm = () => {
           >
             <Field<SignAndVerifySchema['message']>
               name="message"
-              initialValue="GameSwift x Casper Network"
+              initialValue="GameSwift x Casper Wallet"
               onBlurValidate={signAndVerifyFormMessageSchema}
               onChangeValidate={
                 isSubmitted ? signAndVerifyFormMessageSchema : undefined
