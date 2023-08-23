@@ -8,9 +8,10 @@ To get started with this template, follow the steps below:
 
 1. **Clone the repository**: Clone this repository to your local machine.
 2. **Install dependencies**: Install the necessary dependencies by running `yarn install`.
-3. **Copy environment variables**: Copy the `.env.example` file to `.env` and fill in the required environment variables.
+3. **Copy environment variables**: Copy the `.env.example` file to `.env` (`cp .env.example .env`) and fill in the required environment variables.
 4. **Run the development server**: Start the development server by running `yarn dev`.
 5. **Open the application**: Open your web browser and navigate to `http://localhost:3000` to see the application in action.
+6. **Install Casper Wallet**: Make sure to have installed [Casper Wallet](https://www.casperwallet.io/).
 
 ## Scripts
 
